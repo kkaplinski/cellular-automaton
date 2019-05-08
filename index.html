@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell-program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+    
+  <body> 
+    <div class = "wrapper" >
+        <div class = "alert">
+          </div>
+            <form id = "myForm" >
+              <div class = "rule">
+                  <label id = "RuleLabel" for="Rule">Rule: 90</label>
+                  <input type="range" min="1" max="255" value="90" id ="ruleInput">
+              </div>
+              <div class = "steps">
+                  <label id = "stepsLabel" for="stepsInput">Steps: 20</label>
+                  <input type="range" min="1" max="200" value="20" id ="stepsInput">
+              </div>
+                
+               
+            </form>
+            <div class = "celltable">
+              
+              <div class = "programOutput"></div>
+              <button class = "buttonSubmit" type="submit"> Generate </button>
+    
+            </div>
+    </div>
+      
+        <script src="./script.js"></script>
+  </body>    
+</html>
