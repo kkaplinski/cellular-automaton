@@ -1,13 +1,17 @@
-var ruleInput = document.getElementById("ruleInput")
-var ruleLabel = document.getElementById("RuleLabel")
+var ruleInput = document.getElementById("ruleInput");
+var ruleLabel = document.getElementById("RuleLabel");
 var stepsInput = document.getElementById("stepsInput");
-var stepsLabel = document.getElementById("stepsLabel")
+var stepsLabel = document.getElementById("stepsLabel");
+var minusButtons = document.getElementsByClassName('minus');
+var plusButtons = document.getElementsByClassName('plus');
 
 var buttonSubmit = document.getElementsByClassName('buttonSubmit')[0];
 var cellprogram = document.getElementsByClassName('programOutput')[0];
 var cells;
 var alertMessage = document.getElementsByClassName('alert')[0];
-var validation = true;
+
+
+
 
 // Trigger program button
 
@@ -15,61 +19,64 @@ buttonSubmit.addEventListener("click", function(evt) {
     evt.preventDefault();
     AddCellprogram(ruleInput, stepsInput);
 });
-// Hiding alert message
-alertMessage.addEventListener("click", () => {
-    alertMessage.classList.remove('show')
-});
+
+
+
+//Handling UI change when touch
+
+Array.from([ruleInput, stepsInput, ...minusButtons, ...plusButtons]).forEach( (ele) => {
+    ele.addEventListener('touchstart', () => {
+    
+        ele.classList.add('touch');
+    }, false)
+}) 
+Array.from([ruleInput, stepsInput, ...minusButtons, ...plusButtons]).forEach( (ele) => {
+    ele.addEventListener('touchend', () => {
+    
+        ele.classList.remove('touch');
+    }, false)
+}) 
+
 
 //Handling input Range change
+minusButtons[0].addEventListener('click', () => {
+    ruleInput.value--
+    ruleLabel.innerHTML = "Rule: " + (ruleInput.value || 90)
+})
+minusButtons[1].addEventListener('click', () => {
+    stepsInput.value--
+    stepsLabel.innerHTML = "Steps: " + (stepsInput.value || 20)
+
+})
+plusButtons[0].addEventListener('click', () => {
+    ruleInput.value++
+    ruleLabel.innerHTML = "Rule: " + (ruleInput.value || 90)
+})
+plusButtons[1].addEventListener('click', () => {
+    stepsInput.value++
+    stepsLabel.innerHTML = "Steps: " + (stepsInput.value || 20)
+
+})
+
 ruleInput.addEventListener('input', () => {
     
     ruleLabel.innerHTML = "Rule: " + (ruleInput.value || 90)
 })
-
-
 
 stepsInput.addEventListener('input', () => {
     
     stepsLabel.innerHTML = "Steps: " + (stepsInput.value || 20)
 })
 
-// validating form and messeging 
-function validateForm() {
-    
-    if ((ruleInput.value < 0 || ruleInput.value > 255) && ruleInput.value != ''  )  {
-        alertMessage.classList.add('show')
-        var RuleMessage =  `
-            <p> Input "Rule" hasto be beetween 1-255. 
-                If you leave it blank default value is 90 </p>
-            `;
-        alertMessage.innerHTML = RuleMessage + (StepsMessage || '')
-          
-        
-      
-        setTimeout( () => {alertMessage.classList.remove('show')},3000);
-        validation = false;
-    }
 
-    if (stepsInput.value > 200 || stepsInput.value <= 0 ) {
-        alertMessage.classList.add('show')
-        var StepsMessage =  `
-            <p> Input "Steps" has to be beetween 1-200. 
-                This will create a square-shaped grid with side input lengths </p>
-            `;
-        alertMessage.innerHTML = StepsMessage + (RuleMessage || '')
-        setTimeout( () => {alertMessage.classList.remove('show')},3000);
-        validation = false
-    }
-
-}
 
 // Starting program - main function 
 function AddCellprogram(ruleInput, stepsInput) {
-    validateForm()
-    if (!validation) {
-        validation = true;
-        return
-    }   
+    // validateForm()
+    // if (!validation) {
+    //     validation = true;
+    //     return
+    // }   
     // removing old <div> from DOM, when you generate another cellar automate
     if(cells) {
         console.log(cells)
@@ -156,4 +163,37 @@ function AddCellprogram(ruleInput, stepsInput) {
 }
 
 
+// Hiding alert message
+// alertMessage.addEventListener("click", () => {
+//     alertMessage.classList.remove('show')
+// });
+
+// validating form and messeging 
+function validateForm() {
     
+    if ((ruleInput.value < 0 || ruleInput.value > 255) && ruleInput.value != ''  )  {
+        alertMessage.classList.add('show')
+        var RuleMessage =  `
+            <p> Input "Rule" hasto be beetween 1-255. 
+                If you leave it blank default value is 90 </p>
+            `;
+        alertMessage.innerHTML = RuleMessage + (StepsMessage || '')
+          
+        
+      
+        setTimeout( () => {alertMessage.classList.remove('show')},3000);
+        validation = false;
+    }
+
+    if (stepsInput.value > 200 || stepsInput.value <= 0 ) {
+        alertMessage.classList.add('show')
+        var StepsMessage =  `
+            <p> Input "Steps" has to be beetween 1-200. 
+                This will create a square-shaped grid with side input lengths </p>
+            `;
+        alertMessage.innerHTML = StepsMessage + (RuleMessage || '')
+        setTimeout( () => {alertMessage.classList.remove('show')},3000);
+        validation = false
+    }
+
+}
