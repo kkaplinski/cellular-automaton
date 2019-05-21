@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell-program</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+    
+  <body>
+    <button class = "questionMark">&#63</button>
+    <div class = "wrapper" >
+    <div class = "backdrop"></div>
+    <div class = "help">
+        <div>
+            <h3>Hi there !</h3>
+            <p>This is first version of cellular automaton.</p>
+            <br>
+            <p>How does it work? Well, for now you can choose Rule between 1-255 - this is decimal representation of binary rule which is used to map pattern. Steps represent resultion of created pattern - more steps - more new squares rendered.Here is some example of pattern with 90 rule: 
+            </p>
+            <br>
+            <img src="./assets/pattern90.PNG" alt="pattern90">
+            <br>
+            <hr>
+            <i>For more info I suggest to read this article: Wolfram, S. "Statistical Mechanics of Cellular Automata." Rev. Mod. Phys. 55, 601-644, 1983.
+            <br><br>
+             © 2019 kkaplinski All Rights Reserved
+            </i>
+        </div>
+    </div>
+        
+            <form id = "myForm" >
+              <!-- BINARY REPRESENTATION -->
+              <label for="binaryRep">Binary Rule</label>
+              <div class = "binaryRep">
+                <div class ="binaryRepItem">
+                    <div class = "binaryRepCluster">
+                        <div class = "isOne"></div>
+                        <div class = "isOne"></div>
+                        <div class = "isOne"></div>
+                    </div>
+                    <div  class = "binaryOutput">1</div>
+                </div>
+                <div class ="binaryRepItem">
+                    <div class = "binaryRepCluster">
+                        <div class = "isOne"></div>
+                        <div class = "isOne"></div>
+                        <div class = "isZero"></div>
+                    </div>
+                    <div  class = "binaryOutput isOne">1</div>
+                </div>
+                <div class ="binaryRepItem">
+                    <div class = "binaryRepCluster">
+                        <div class = "isOne"></div>
+                        <div class = "isZero"></div>
+                        <div class = "isOne"></div>
+                    </div>
+                    <div  class = "binaryOutput">1</div>
+                </div>
+                <div class ="binaryRepItem">
+                    <div class = "binaryRepCluster">
+                        <div class = "isOne"></div>
+                        <div class = "isZero"></div>
+                        <div class = "isZero"></div>
+                    </div>
+                    <div  class = "binaryOutput isOne">1</div>
+                </div>
+                <div class ="binaryRepItem">
+                    <div class = "binaryRepCluster">
+                        <div class = "isZero"></div>
+                        <div class = "isOne"></div>
+                        <div class = "isOne"></div>
+                    </div>
+                    <div  class = "binaryOutput isOne">1</div>
+                </div>
+                <div class ="binaryRepItem">
+                    <div class = "binaryRepCluster">
+                        <div class = "isZero"></div>
+                        <div class = "isOne"></div>
+                        <div class = "isZero"></div>
+                    </div>
+                    <div  class = "binaryOutput">1</div>
+                </div>
+                <div class ="binaryRepItem">
+                    <div class = "binaryRepCluster">
+                        <div class = "isZero"></div>
+                        <div class = "isZero"></div>
+                        <div class = "isOne"></div>
+                    </div>
+                    <div  class = "binaryOutput isOne">1</div>
+                </div>
+                <div class ="binaryRepItem">
+                    <div class = "binaryRepCluster">
+                        <div class = "isZero"></div>
+                        <div class = "isZero"></div>
+                        <div class = "isZero"></div>
+                    </div>
+                    <div  class = "binaryOutput">1</div>
+                </div>
+              </div>
+
+              <!-- CONTROL PANEL-->
+              <div class = "controlPanel">
+                  <div class = "rule">
+                      <label id = "RuleLabel" for="Rule">Rule: 90</label>
+                      <button type ="button" class = "minus">&#8722</button>
+                      <input  type="range" min="1" max="255" value="90" id ="ruleInput">
+                      <button type ="button" class = "plus">&#43</button>
+                  </div>
+                  <div class = "steps">
+                      <label id = "stepsLabel" for="stepsInput">Steps: 100</label>
+                      <button type ="button" class = "minus">&#8722</button>
+                      <input type="range" min="1" max="500" value="100" id ="stepsInput">
+                      <button type ="button" class = "plus">&#43</button>
+                  </div>
+              </div>
+            
+            </form>
+            
+              <!-- OUTPUT PANEL -->
+            
+
+            <div class = "celltable">
+              <div class = "programOutput">
+                <canvas   id = "canvas">
+                  ...treść alternatywna...
+                </canvas>
+              </div>
+              <button class = "buttonSubmit" type="submit"> Generate </button>
+            </div>
+    </div>
+        <script src="./script.js"></script>
+        <script id="__bs_script__">//<![CDATA[
+            document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.5'><\/script>".replace("HOST", location.hostname));
+        //]]></script>
+  </body>    
+</html>
