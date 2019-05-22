@@ -1,0 +1,26 @@
+{
+  "name": "cell-program",
+  "version": "1.0.0",
+  "description": "Hi there !",
+  "main": "deploy.js",
+  "dependencies": {
+    "browser-sync": "^2.26.5",
+    "ftp-deploy": "^2.3.3",
+    "gulp": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "node deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkaplinski/cellular-automaton.git"
+  },
+  "author": "kkaplinski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkaplinski/cellular-automaton/issues"
+  },
+  "homepage": "https://github.com/kkaplinski/cellular-automaton#readme"
+}
