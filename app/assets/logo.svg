@@ -1,0 +1,36 @@
+<svg width="222.00000000000003" height="122" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="224" height="124" id="canvas_background" fill="none"/>
+  <g id="canvasGrid" display="none">
+   <rect id="svg_3" width="219" height="120" x="1" y="1" stroke-width="0" fill="url(#gridpattern)"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_22">
+   <rect fill="#ffa700" stroke-width="1.5" x="101.205005" y="1.153244" width="20" height="20" id="svg_9"/>
+   <g id="svg_6"/>
+   <g id="svg_21">
+    <rect fill="#ffa700" stroke-width="1.5" x="61.145506" y="40.819911" width="20" height="20" id="svg_5"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="81.213399" y="21.153244" width="20" height="20" id="svg_8"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="1.328896" y="100.655779" width="20" height="20" id="svg_11"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="81.108916" y="100.65578" width="20" height="20" id="svg_12"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="41.177868" y="60.778588" width="20" height="20" id="svg_15"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="21.186261" y="80.778588" width="20" height="20" id="svg_18"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="61.209242" y="80.778588" width="20" height="20" id="svg_19"/>
+   </g>
+   <g transform="rotate(90 170.91984558105472,70.90451049804689) " id="svg_4">
+    <rect fill="#ffa700" stroke-width="1.5" x="180.794201" y="40.819911" width="20" height="20" id="svg_7"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="200.862094" y="21.153244" width="20" height="20" id="svg_10"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="120.97759" y="100.655779" width="20" height="20" id="svg_13"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="200.757611" y="100.65578" width="20" height="20" id="svg_14"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="160.826563" y="60.778588" width="20" height="20" id="svg_20"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="140.834956" y="80.778588" width="20" height="20" id="svg_16"/>
+    <rect fill="#ffa700" stroke-width="1.5" x="180.857937" y="80.778588" width="20" height="20" id="svg_17"/>
+   </g>
+  </g>
+ </g>
+</svg>

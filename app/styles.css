@@ -5,12 +5,15 @@ body {
 
 
 .wrapper {
+    box-sizing: border-box;
     overflow: auto;
     margin: 0;
     padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -32,6 +35,47 @@ label {
     margin: 0 10px;
     }
 
+/*///////////////// Starting window ///////////////////*/
+@keyframes blinking {
+    0%   {transform: scale(1) }
+    25%   {transform: scale(1.1) }
+    50%   {transform: scale(1.2) }
+    75%   {transform: scale(1.1) }
+    100%   {transform: scale(1) }
+  }
+
+@keyframes rotate {
+    0%   {transform: rotate(0) scale(1) }
+    100%   {transform: rotate(360deg) scale(0) }
+  }
+
+.rotateEver {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: rotate 0.5s 1.2s
+}
+.logo {
+    display: block;
+    animation: blinking 1s linear infinite reverse;
+}
+
+
+.loaderStart {
+    color: #ffa700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #555555;
+    transition: all 0.3s ease-in-out
+}
 /*///////////////// Helper ///////////////////*/
 
 .backdrop {
@@ -57,7 +101,7 @@ label {
     width: 80%;
     height:70%;
     position: fixed;
-    z-index: 900;
+    z-index: 800;
     top: 15%;
     left: 10%;
     -webkit-transition: -webkit-transform 0.3s ease-in-out;
@@ -92,7 +136,7 @@ img {
     width: 100%;
     height: 100%;
 }
-   
+
 /*///////////////// Binary Representation ///////////////////*/
 .binaryRep {
     width: 100%;
@@ -176,7 +220,7 @@ form {
         -ms-flex-align: start;
             align-items: flex-;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
+        -ms-flex-pack: justify; 
             justify-content: space-between;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -233,11 +277,11 @@ button.touch {
 }
 
 .buttonSubmit {
+    width: 100px;
     -webkit-tap-highlight-color: transparent;
     border: 1px solid white;
     border-radius: 20px;
     padding: 10px;
-    margin-top: 20px;
     border: 1px solid #ffa700;
     background-color: #ffa700;
     font-size: inherit;
@@ -248,30 +292,9 @@ button.touch {
 
 
 /*///////////////// Cellular pattern  ///////////////////*/
-.celltable {
-    -webkit-box-ordinal-group: 1;
-        -ms-flex-order: 0;
-            order: 0;
-    height: 70%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-}
 
 .programOutput {
+    box-sizing: border-box;
     position: relative;
     overflow: hidden;
     padding: 10px;
@@ -280,9 +303,10 @@ button.touch {
             box-shadow: 10px 10px 17px -12px rgba(0,0,0,0.75);
     background-color: white;
 
-    --prOutput-width: 270px;
+    --prOutput-width: 300px;
     width: var(--prOutput-width);
     height: var(--prOutput-width);
+    margin-top: 50px;
 }
 
 
@@ -339,35 +363,6 @@ input[type=range] {
   }
   
 
-/*/////////////////Alert ///////////////////*/
-  .alert {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    color: white;
-    -webkit-transition: bottom 0.5s ease-in;
-    -o-transition: bottom 0.5s ease-in;
-    transition: bottom 0.5s ease-in;
-    width: 100%;
-    bottom: -100px;
-    position: absolute;
-    background-color: rgb(51,51,51,0.6);
-    width: 100%;
-    height: 100px;
-}
-
-.alert.show {
-    bottom: 0px;
-}
 
 /*/////////////////Query media ///////////////////*/
 
@@ -389,21 +384,22 @@ input[type=range] {
 
 @media (min-width: 500px) {
     .programOutput {
-        --prOutput-width: 400px;
-        --prOutput-width: 400px;
+        --prOutput-width: 350px;
+        --prOutput-width: 350px;
     }
-.binaryRep {
-    width: 500px;
-}
+    .binaryRep {
+        width: 500px;
+    }
     
 }
 
 @media(min-width: 700px){
-    img {
+    .help img {
         height: 50%;
         width: 50%;
     }
     form {
+        order: 0;
         height: 20%;
         -webkit-box-pack: start;
             -ms-flex-pack: start;
@@ -411,19 +407,14 @@ input[type=range] {
         padding: 20px 10px;
         
     }
-    .celltable {
-        -webkit-box-ordinal-group: 2;
-            -ms-flex-order: 1;
-                order: 1;
-        height: 80%;
-        
-    }
     .programOutput {
         --prOutput-width: 450px;
         --prOutput-width: 450px;
         -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
-            order: 1;
+            order: 2;
+        margin-bottom: 40px;
+        margin-top: 0px;
     }
 
     .controlPanel {
@@ -451,15 +442,14 @@ input[type=range] {
                 transform: scale(1.2)
     }
 
-    .buttonSubmit {
-        -webkit-box-ordinal-group: 1;
-            -ms-flex-order: 0;
-                order: 0;
-        margin-bottom: 10px;
-    }
-    .binaryRepItem, .binaryRep {
-        padding: 0;
-    }
+        .buttonSubmit {
+            -webkit-box-ordinal-group: 1;
+                -ms-flex-order: 0;
+                    order: 1;
+        }
+        .binaryRepItem, .binaryRep {
+            padding: 0;
+        }
     
 }
 
@@ -483,9 +473,6 @@ input[type=range] {
 
     .questionMark {
         top: 11%;
-    }
-    .celltable {
-        height: 90%;
     }
     .programOutput {
         --prOutput-width: 500px;

@@ -1,3 +1,5 @@
+
+
 var canvasElem = document.getElementById('canvas');
 var ctx = canvasElem.getContext('2d');
 
@@ -18,6 +20,8 @@ var binaryArray8;
 var helper = document.querySelector('.help');
 var backdrop = document.querySelector('.backdrop');
 var questionMark = document.querySelector('.questionMark')
+var wrapper = document.querySelector('.wrapper')
+
 
 
 // Setting the value in the --vh custom property to the root of the document
@@ -233,3 +237,28 @@ questionMark.addEventListener('click', () => {
     backdrop.style.setProperty('display', 'block')
     helper.style.setProperty('transform', 'translateY(0vh)')
 });
+
+// Starting window 
+
+(function startingApp() {
+    var startWindow = document.createElement('div')
+    startWindow.innerHTML =
+    `<div class ="rotateEver">
+        <h1  style = "font-weight: 100">Cellular automaton</h1>
+        <br>
+        <div class = "logo">
+            <img  style ="width: 70%; height: auto" src ="./assets/logo.svg">
+        </div>
+        <br><br>
+        <p ><i>By kkaplinski</i></p>
+    </div>
+   
+
+    `
+    wrapper.appendChild(startWindow)
+    startWindow.classList.add('loaderStart')
+    setTimeout( () => {
+        startWindow.style.setProperty('transform', 'translateY(-100vh)')
+    },1500)
+
+})();
