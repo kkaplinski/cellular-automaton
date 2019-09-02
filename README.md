@@ -1,8 +1,10 @@
+# CellularAutomaton
+
 Hi there ! 
 
 This is first version of cellular automaton. You can check it here:
 
-http://cellulargen.kaplica200.pl/
+http://cellulargen.kkaplinski.pl/
 
 or download files and run index.html in your browser. This is clean vanilla javascript. 
 
