@@ -4,7 +4,7 @@ Hi there !
 
 This is first version of cellular automaton. You can check it here:
 
-http://cellulargen.kkaplinski.pl/
+https://cellulargen.web.app
 
 or download files and run index.html in your browser. This is clean vanilla javascript. 
 
